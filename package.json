@@ -20,6 +20,7 @@
         "commitlint": "commitlint --edit"
     },
     "dependencies": {
+        "@next/bundle-analyzer": "^13.4.19",
         "clsx": "^2.0.0",
         "next": "^13.4.19",
         "react": "^18.2.0",
