@@ -1,6 +1,6 @@
 {
     "name": "nextjs-app-dir-template",
-    "description": "Next.js app directory template, built with Next.js (TypeScript) and Tailwind CSS ",
+    "description": "Next.js app directory template, built with Next.js (TypeScript) and Tailwind CSS.",
     "version": "0.2.0",
     "license": "MIT",
     "private": false,
