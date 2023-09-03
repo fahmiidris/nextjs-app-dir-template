@@ -10,6 +10,7 @@ const prettierConfig = {
     quoteProps: 'as-needed',
     arrowParens: 'always',
     trailingComma: 'es5',
+    plugins: ['prettier-plugin-tailwindcss'],
 };
 
 module.exports = prettierConfig;
