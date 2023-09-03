@@ -14,7 +14,13 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier '{src,utils}/**/*.{css,ts,tsx,mdx}' --write",
+        "checker": "pnpm run check:ts && pnpm run check:lint",
+        "check:dead-ts": "ts-prune --error",
+        "check:ts": "tsc",
+        "check:lint": "pnpm run lint",
+        "formatter": "pnpm run staged:lint && pnpm run staged:prettier",
+        "staged:lint": "eslint --cache --fix",
+        "staged:prettier": "prettier '{src,utils}/**/*.{css,ts,tsx,mdx}' --write",
         "prepare": "husky install",
         "lint-staged": "lint-staged",
         "commitlint": "commitlint --edit"
@@ -49,6 +55,7 @@
         "prettier": "^3.0.3",
         "prettier-plugin-tailwindcss": "^0.5.4",
         "tailwindcss": "^3.3.3",
+        "ts-prune": "^0.10.3",
         "typescript": "^5.2.2"
     },
     "browserslist": [
