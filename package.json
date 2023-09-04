@@ -20,7 +20,7 @@
         "check:lint": "pnpm run lint",
         "formatter": "pnpm run staged:lint && pnpm run staged:prettier",
         "staged:lint": "eslint --cache --fix",
-        "staged:prettier": "prettier '{src,utils}/**/*.{css,ts,tsx,mdx}' --write",
+        "staged:prettier": "prettier '**/*.{css,js,cjs,mjs,jsx,ts,tsx,md,mdx}' --write",
         "prepare": "husky install",
         "lint-staged": "lint-staged",
         "commitlint": "commitlint --edit"

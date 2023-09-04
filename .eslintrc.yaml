@@ -14,10 +14,7 @@ extends:
 parser: '@typescript-eslint/parser'
 
 rules:
-    'no-console': 'error'
-    'prettier/prettier':
-        - 'error'
-        - endOfLine: 'auto'
+    'no-console': 'warn'
 
 globals:
     JSX: true
