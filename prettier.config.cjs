@@ -7,9 +7,11 @@ const prettierConfig = {
     bracketSameLine: false,
     tabWidth: 4,
     printWidth: 150,
+    endOfLine: 'auto',
     quoteProps: 'as-needed',
     arrowParens: 'always',
     trailingComma: 'es5',
+    plugins: ['prettier-plugin-tailwindcss'],
 };
 
 module.exports = prettierConfig;
