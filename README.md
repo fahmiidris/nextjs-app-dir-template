@@ -7,7 +7,7 @@ Here is how you can run the project locally:
 1. Clone this repo
 
     ```sh
-    git clone git@github.com:fahmiidris-labs/nextjs-app-dir-template.git
+    git clone git@github.com:fahmiidris/nextjs-app-dir-template.git
     ```
 
 2. Go into the project root directory
