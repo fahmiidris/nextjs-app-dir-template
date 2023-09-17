@@ -25,11 +25,11 @@ Here is how you can run the project locally:
 4. Install JS dependencies
 
     ```sh
-    npm install
+    pnpm install
     ```
 
 5. Start the dev server
 
     ```sh
-    mpm run dev
+    pnpm run dev
     ```
