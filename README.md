@@ -47,5 +47,5 @@ Here is how you can use this template to create a new Next.js project:
 2. Use [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
     ```sh
-    pnpx create next-app --example https://github.com/fahmiidris/nextjs-app-dir-template project-name
+    pnpx create next-app -e https://github.com/fahmiidris/nextjs-app-dir-template project-name
     ```
