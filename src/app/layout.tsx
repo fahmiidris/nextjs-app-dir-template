@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: DEFAULT_DESCRIPTION,
 };
 
-export default function Layout({ children }: TLayoutProps) {
+export default async function Layout({ children }: TLayoutProps) {
     return (
         <html lang="en" className={cn(['scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])}>
             <body className="bg-white font-sans text-slate-500 antialiased">{children}</body>
