@@ -1,6 +1,56 @@
 {
-    "import * as React": {
+    "Import React": {
         "prefix": "ir",
         "body": ["import * as React from 'react';"]
+    },
+    "Next.js Page": {
+        "prefix": "np",
+        "body": [
+            "import * as React from 'react';",
+            "",
+            "import type { Metadata } from 'next';",
+            "",
+            "export const metadata: Metadata = {"
+            "    title: '$2',",
+            "    description: '$3',",
+            "};"
+            "",
+            "export default async function ${1:Page}() {",
+            "    return <>${1:Page}</>;",
+            "}",
+            "",
+        ],
+    },
+    "Next.js Page With Props": {
+        "prefix": "npwp",
+        "body": [
+            "import * as React from 'react';",
+            "",
+            "import type { Metadata } from 'next';",
+            "import type { TPageProps } from '@/types/page.type';",
+            "",
+            "export const metadata: Metadata = {"
+            "    title: '$2',",
+            "    description: '$3',",
+            "};"
+            "",
+            "export default async function ${1:Page}({ $4 }: TPageProps) {",
+            "    return <>${1:Page}</>;",
+            "}",
+            "",
+        ],
+    },
+    "Next.js Layout": {
+        "prefix": "nl",
+        "body": [
+            "import * as React from 'react';",
+            "",
+            "import type { TLayoutProps } from '@/types/layout.type';",
+            "",
+            "export default async function ${1:Layout}({ children }: TLayoutProps) {",
+            "    return <>{children}</>;",
+            "}",
+            "",
+        ]
     }
 }
