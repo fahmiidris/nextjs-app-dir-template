@@ -3,6 +3,7 @@
     "editor.tabSize": 4,
     "editor.rulers": [150],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "tailwindCSS.classAttributes": ["class", "className", "classNames"],
     "emmet.includeLanguages": {
         "postcss": "css"
     },
