@@ -38,6 +38,7 @@
         "@commitlint/cli": "^17.8.1",
         "@commitlint/config-conventional": "^17.8.1",
         "@commitlint/types": "^17.8.1",
+        "@tailwindcss/typography": "^0.5.10",
         "@types/node": "^20.10.2",
         "@types/react": "^18.2.40",
         "@types/react-dom": "^18.2.17",
