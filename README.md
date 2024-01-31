@@ -16,10 +16,10 @@ Here is how you can run the project locally:
     cd nextjs-app-dir-template
     ```
 
-3. Copy `.env.example` to `.env.local`
+3. Copy `.env.example` to `.env`
 
     ```sh
-    cp .env.example .env.local
+    cp .env.example .env
     ```
 
 4. Install JS dependencies
