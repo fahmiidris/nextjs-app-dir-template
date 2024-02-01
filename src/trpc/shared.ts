@@ -2,7 +2,7 @@ import superjson from 'superjson';
 
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 
-import type { TAppRouter } from '@/server/router';
+import type { TAppRouter } from '@/server/routers';
 
 export const transformer = superjson;
 

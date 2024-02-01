@@ -30,8 +30,11 @@ export const env = createEnv({
         NEXTAUTH_URL: z.preprocess((str) => process.env.VERCEL_URL ?? str, process.env.VERCEL ? z.string() : z.string().url()),
         NEXTAUTH_SECRET: process.env.NODE_ENV === 'production' ? z.string() : z.string().optional(),
 
-        GITHUB_CLIENT_ID: z.string(),
-        GITHUB_CLIENT_SECRET: z.string(),
+        GOOGLE_CLIENT_ID: z.string(),
+        GOOGLE_CLIENT_SECRET: z.string(),
+
+        // GITHUB_CLIENT_ID: z.string(),
+        // GITHUB_CLIENT_SECRET: z.string(),
 
         // DB_HOST: z.string(),
         // DB_NAME: z.string(),
@@ -57,8 +60,11 @@ export const env = createEnv({
         NEXTAUTH_URL: process.env.NEXTAUTH_URL,
         NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
 
-        GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-        GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+        GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+        GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+
+        // GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+        // GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
 
         // DB_HOST: process.env.DB_HOST,
         // DB_NAME: process.env.DB_NAME,

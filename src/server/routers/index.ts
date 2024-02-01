@@ -1,6 +1,6 @@
 import { createTRPCRouter } from '@/server/trpc';
 
-import { ping } from '@/server/api/ping';
+import { quotesRouter } from '@/server/routers/quotes/router';
 
 /**
  * This is the primary router for your server.
@@ -8,7 +8,7 @@ import { ping } from '@/server/api/ping';
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-    ping,
+    quotes: quotesRouter,
 });
 
 /**

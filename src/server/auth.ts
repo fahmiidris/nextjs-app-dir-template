@@ -1,7 +1,7 @@
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { getServerSession, type DefaultSession, type NextAuthOptions } from 'next-auth';
 
-import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 
 import { db } from '@/server/db';
 import { pgTable } from '@/server/db/table';
@@ -48,14 +48,14 @@ export const authOptions: NextAuthOptions = {
     },
     adapter: DrizzleAdapter(db, pgTable) as Adapter,
     providers: [
-        GitHubProvider({
-            clientId: env.GITHUB_CLIENT_ID,
-            clientSecret: env.GITHUB_CLIENT_SECRET,
+        GoogleProvider({
+            clientId: env.GOOGLE_CLIENT_ID,
+            clientSecret: env.GOOGLE_CLIENT_SECRET,
         }),
         /**
          * ...add more providers here.
          *
-         * Most other providers require a bit more work than the Discord provider. For example, the
+         * Most other providers require a bit more work than the Google Provider. For example, the
          * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
          * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
          *

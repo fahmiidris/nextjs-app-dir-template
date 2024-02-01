@@ -10,7 +10,7 @@ import { getUrl, transformer } from '@/trpc/shared';
 
 import { env } from '@/env.mjs';
 
-import type { TAppRouter } from '@/server/router';
+import type { TAppRouter } from '@/server/routers';
 
 export const api = createTRPCReact<TAppRouter>();
 

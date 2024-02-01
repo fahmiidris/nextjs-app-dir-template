@@ -8,7 +8,7 @@ import { createTRPCClient, loggerLink, TRPCClientError } from '@trpc/client';
 
 import { transformer } from '@/trpc/shared';
 import { createTRPCContext } from '@/server/trpc';
-import { appRouter, type TAppRouter } from '@/server/router';
+import { appRouter, type TAppRouter } from '@/server/routers';
 
 import { env } from '@/env.mjs';
 

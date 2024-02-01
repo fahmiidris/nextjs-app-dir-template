@@ -1,9 +1,9 @@
 import { env } from '@/env.mjs';
 
-import type { Config } from 'drizzle-kit';
+import { defineConfig } from 'drizzle-kit';
 
-const drizzleConfig = {
-    schema: './src/server/db/schema/*',
+const drizzleConfig = defineConfig({
+    schema: './src/server/db/schemas/**/schema.ts',
     out: './drizzle',
     driver: 'pg',
     dbCredentials: {
@@ -12,6 +12,6 @@ const drizzleConfig = {
     tablesFilter: [`${env.NEXT_PUBLIC_PREFIX}_*`],
     verbose: true,
     strict: true,
-} satisfies Config;
+});
 
 export default drizzleConfig;

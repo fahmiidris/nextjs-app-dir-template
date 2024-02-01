@@ -38,9 +38,13 @@ Here is how you can run the project locally:
 
 Here is how you can use this template to create a new Next.js project:
 
+### Create new project using this template
+
+There are two ways to create a new project using this template:
+
 1. Create a new repository on GitHub
 
-    Click the **Use this template** button in the top right corner, and then click **Create new repository**
+    Click the **Use this template** button in the top right corner, and then click **Create new repository**.
 
     ![use-this-template](https://github.com/fahmiidris/nextjs-app-dir-template/assets/85909352/13440548-ffd6-4980-a31c-697de59bb0b1)
 
@@ -49,3 +53,21 @@ Here is how you can use this template to create a new Next.js project:
     ```sh
     pnpx create next-app -e https://github.com/fahmiidris/nextjs-app-dir-template project-name
     ```
+
+### Setup supabase project
+
+1.  Create a new supabase project
+
+    Go to [supabase.com](https://supabase.com/), sign-in, and create a new project.
+
+    > Note: Make sure your project password is very safe, because it will be used as a password database.
+
+2.  Setup environment variables
+
+    Copy `.env.example` to `.env`
+
+    ```sh
+    cp .env.example .env
+    ```
+
+    Then, fill in the environment variables. I have commented the instructions for getting the value in the `.env` file.
