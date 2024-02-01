@@ -8,4 +8,4 @@ import { env } from '@/env.mjs';
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const pgTable = pgTableCreator((name) => `${env.NEXT_PUBLIC_PREFIX}_${name}`);
+export const pgTable = pgTableCreator((name) => `${env.NEXT_PUBLIC_PREFIX}__${name}`);

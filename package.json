@@ -28,7 +28,6 @@
         "db:studio": "drizzle-kit studio"
     },
     "dependencies": {
-        "@auth/drizzle-adapter": "^0.4.0",
         "@next/bundle-analyzer": "^14.1.0",
         "@t3-oss/env-nextjs": "^0.7.3",
         "@tanstack/react-query": "^5.18.0",
@@ -66,6 +65,7 @@
         "eslint-plugin-prettier": "^5.1.3",
         "husky": "^8.0.3",
         "lint-staged": "^14.0.1",
+        "pg": "^8.11.3",
         "postcss": "^8.4.33",
         "postcss-focus-visible": "^9.0.1",
         "postcss-import": "^15.1.0",

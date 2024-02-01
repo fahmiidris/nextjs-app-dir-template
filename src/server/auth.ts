@@ -1,10 +1,10 @@
-import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import { getServerSession, type DefaultSession, type NextAuthOptions } from 'next-auth';
+import { getServerSession, type DefaultSession, type DefaultUser, type NextAuthOptions } from 'next-auth';
 
 import GoogleProvider from 'next-auth/providers/google';
 
 import { db } from '@/server/db';
 import { pgTable } from '@/server/db/table';
+import { PostgreSQLAdapter } from '@/server/db/adapters/pg';
 
 import { env } from '@/env.mjs';
 
@@ -25,10 +25,10 @@ declare module 'next-auth' {
         } & DefaultSession['user'];
     }
 
-    // interface User {
-    //   ...other properties
-    //   role: UserRole;
-    // }
+    interface User extends DefaultUser {
+        //   ...other properties
+        //   role: UserRole;
+    }
 }
 
 /**
@@ -46,7 +46,7 @@ export const authOptions: NextAuthOptions = {
             },
         }),
     },
-    adapter: DrizzleAdapter(db, pgTable) as Adapter,
+    adapter: PostgreSQLAdapter(db, pgTable) as Adapter,
     providers: [
         GoogleProvider({
             clientId: env.GOOGLE_CLIENT_ID,
