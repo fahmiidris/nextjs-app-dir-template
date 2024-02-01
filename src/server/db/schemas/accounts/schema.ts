@@ -29,7 +29,7 @@ export const accounts = pgTable(
         compoundKey: primaryKey({
             columns: [accounts.id, accounts.provider, accounts.providerAccountId],
         }),
-        userIdIdx: index('account_userId_idx').on(accounts.userId),
+        userIdIdx: index('account_user_id_idx').on(accounts.userId),
     })
 );
 

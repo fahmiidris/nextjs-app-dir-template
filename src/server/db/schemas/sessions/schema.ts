@@ -16,7 +16,7 @@ export const sessions = pgTable(
     },
     (sessions) => ({
         compoundKey: primaryKey({ columns: [sessions.id, sessions.sessionToken] }),
-        userIdIdx: index('session_userId_idx').on(sessions.userId),
+        userIdIdx: index('session_user_id_idx').on(sessions.userId),
     })
 );
 
