@@ -14,12 +14,7 @@ import {
 
 import { stripUndefined } from '@/utils/strip-undefined';
 
-import type { Awaitable } from 'next-auth';
-import type { AdapterAccount, AdapterUser, Adapter as DefaultAdapter } from 'next-auth/adapters';
-
-type Adapter = Omit<DefaultAdapter, 'createUser'> & {
-    createUser(data: Omit<AdapterUser, 'id'>): Awaitable<AdapterUser>;
-};
+import type { Adapter, AdapterAccount } from 'next-auth/adapters';
 
 export function createTables(pgTable: PgTableFn) {
     const users = pgTable(
@@ -61,7 +56,7 @@ export function createTables(pgTable: PgTableFn) {
             compoundKey: primaryKey({
                 columns: [accounts.id, accounts.provider, accounts.providerAccountId],
             }),
-            userIdIdx: index('account_userId_idx').on(accounts.userId),
+            userIdIdx: index('account_user_id_idx').on(accounts.userId),
         })
     );
 
@@ -77,7 +72,7 @@ export function createTables(pgTable: PgTableFn) {
         },
         (sessions) => ({
             compoundKey: primaryKey({ columns: [sessions.id, sessions.sessionToken] }),
-            userIdIdx: index('session_userId_idx').on(sessions.userId),
+            userIdIdx: index('session_user_id_idx').on(sessions.userId),
         })
     );
 
@@ -176,12 +171,13 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
 
             const account = {
                 ...updatedAccount,
-                access_token: updatedAccount.accessToken ?? undefined,
-                token_type: updatedAccount.tokenType ?? undefined,
-                id_token: updatedAccount.idToken ?? undefined,
+                refresh_token_expires_in: updatedAccount.refreshTokenExpiresIn ?? undefined,
                 refresh_token: updatedAccount.refreshToken ?? undefined,
-                scope: updatedAccount.scope ?? undefined,
+                access_token: updatedAccount.accessToken ?? undefined,
                 expires_at: updatedAccount.expiresAt ?? undefined,
+                token_type: updatedAccount.tokenType ?? undefined,
+                scope: updatedAccount.scope ?? undefined,
+                id_token: updatedAccount.idToken ?? undefined,
                 session_state: updatedAccount.sessionState ?? undefined,
             };
 

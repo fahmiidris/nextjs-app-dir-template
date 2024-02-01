@@ -4,7 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 
 import { db } from '@/server/db';
 import { pgTable } from '@/server/db/table';
-import { PostgreSQLAdapter } from '@/server/db/adapters/pg';
+import { PostgreSQLAdapter } from '@/server/db/adapter';
 
 import { env } from '@/env.mjs';
 
