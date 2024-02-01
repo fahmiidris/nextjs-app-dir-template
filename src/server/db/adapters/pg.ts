@@ -102,13 +102,11 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
 
     return {
         async createUser(data) {
-            return stripUndefined(
-                await client
-                    .insert(users)
-                    .values({ ...data, id: crypto.randomUUID() })
-                    .returning()
-                    .then((res) => res[0])
-            );
+            return await client
+                .insert(users)
+                .values({ ...data, id: crypto.randomUUID() })
+                .returning()
+                .then((res) => res[0] ?? null);
         },
 
         async getUser(data) {
@@ -118,6 +116,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .where(eq(users.id, data))
                 .then((res) => res[0] ?? null);
         },
+
         async getUserByEmail(data) {
             return await client
                 .select()
@@ -125,6 +124,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .where(eq(users.email, data))
                 .then((res) => res[0] ?? null);
         },
+
         async createSession(data) {
             return await client
                 .insert(sessions)
@@ -132,6 +132,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .returning()
                 .then((res) => res[0]);
         },
+
         async getSessionAndUser(data) {
             return await client
                 .select({
@@ -143,6 +144,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .innerJoin(users, eq(users.id, sessions.userId))
                 .then((res) => res[0] ?? null);
         },
+
         async updateUser(data) {
             if (!data.id) {
                 throw new Error('No user id.');
@@ -155,6 +157,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .returning()
                 .then((res) => res[0]);
         },
+
         async updateSession(data) {
             return await client
                 .update(sessions)
@@ -163,15 +166,28 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .returning()
                 .then((res) => res[0]);
         },
+
         async linkAccount(rawAccount) {
-            return stripUndefined(
-                await client
-                    .insert(accounts)
-                    .values(rawAccount)
-                    .returning()
-                    .then((res) => res[0])
-            );
+            const updatedAccount = await client
+                .insert(accounts)
+                .values(rawAccount)
+                .returning()
+                .then((res) => res[0]);
+
+            const account = {
+                ...updatedAccount,
+                access_token: updatedAccount.accessToken ?? undefined,
+                token_type: updatedAccount.tokenType ?? undefined,
+                id_token: updatedAccount.idToken ?? undefined,
+                refresh_token: updatedAccount.refreshToken ?? undefined,
+                scope: updatedAccount.scope ?? undefined,
+                expires_at: updatedAccount.expiresAt ?? undefined,
+                session_state: updatedAccount.sessionState ?? undefined,
+            };
+
+            return stripUndefined(account);
         },
+
         async getUserByAccount(account) {
             const dbAccount =
                 (await client
@@ -181,8 +197,13 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                     .leftJoin(users, eq(accounts.userId, users.id))
                     .then((res) => res[0])) ?? null;
 
-            return dbAccount?.users ?? null;
+            if (!dbAccount) {
+                return null;
+            }
+
+            return dbAccount.users;
         },
+
         async deleteSession(sessionToken) {
             const session = await client
                 .delete(sessions)
@@ -192,6 +213,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
 
             return session;
         },
+
         async createVerificationToken(token) {
             return await client
                 .insert(verificationTokens)
@@ -199,6 +221,7 @@ export function PostgreSQLAdapter(client: InstanceType<typeof PgDatabase>, table
                 .returning()
                 .then((res) => res[0]);
         },
+
         async useVerificationToken(token) {
             try {
                 return await client
