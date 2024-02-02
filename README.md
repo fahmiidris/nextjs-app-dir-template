@@ -38,36 +38,30 @@ Here is how you can run the project locally:
 
 Here is how you can use this template to create a new Next.js project:
 
-### Create new project using this template
+### 1. Create a new repository on GitHub
 
-There are two ways to create a new project using this template:
+Click the **Use this template** button in the top right corner, and then click **Create new repository**
 
-1. Create a new repository on GitHub
+![use-this-template](https://github.com/fahmiidris/nextjs-app-dir-template/assets/85909352/13440548-ffd6-4980-a31c-697de59bb0b1)
 
-    Click the **Use this template** button in the top right corner, and then click **Create new repository**.
+### 2. Using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
-    ![use-this-template](https://github.com/fahmiidris/nextjs-app-dir-template/assets/85909352/13440548-ffd6-4980-a31c-697de59bb0b1)
+```sh
+pnpx create next-app -e https://github.com/fahmiidris/nextjs-app-dir-template project-name
+```
 
-2. Use [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+Replace `project-name` with the name of your project.
 
-    ```sh
-    pnpx create next-app -e https://github.com/fahmiidris/nextjs-app-dir-template project-name
-    ```
+## Tech Stack
 
-### Setup supabase project
+This template is specified if you want to use the following tech stack combination:
 
-1.  Create a new supabase project
+-   Next.js
+-   TypeScript
+-   NextAuth.js
+-   tRPC
+-   Drizzle
+-   PostgreSQL
+-   Tailwind CSS
 
-    Go to [supabase.com](https://supabase.com/), sign-in, and create a new project.
-
-    > Note: Make sure your project password is very safe, because it will be used as a password database.
-
-2.  Setup environment variables
-
-    Copy `.env.example` to `.env`
-
-    ```sh
-    cp .env.example .env
-    ```
-
-    Then, fill in the environment variables. I have commented the instructions for getting the value in the `.env` file.
+If you want more flexibility in choosing the stack you want to use, I recommend using [`create-t3-app`](https://create.t3.gg/) instead.
