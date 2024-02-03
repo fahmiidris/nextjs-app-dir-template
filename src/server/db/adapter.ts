@@ -1,3 +1,20 @@
+/**
+ * @file Adapter for NextAuth.js to use PostgreSQL as a database.
+ *
+ * This file is a modified version of the adapter from the NextAuth.js repository.
+ *
+ * The original file can be found here:
+ * @see https://github.com/nextauthjs/next-auth/blob/main/packages/adapter-drizzle/src/lib/pg.ts
+ * @see https://authjs.dev/reference/adapter/drizzle
+ *
+ * Why is this file modified?
+ * By default, NextAuth.js uses `camelCase` for its database rows while still following the conventional `snake_case` format for OAuth related values,
+ * additionally, by default the table name is singular not plural (example: `user` not `users`). I don't like it, and that's a problem for me.
+ * Most adapters can be used to force a casing convention. But, not for drizzle (at least for now).
+ *
+ * @see https://github.com/nextauthjs/next-auth/blob/c1a63680fb6a6cdfd6a4ade8c0b61cbe2aa9cd6f/packages/core/src/adapters.ts#L93
+ */
+
 import { and, eq, sql } from 'drizzle-orm';
 import {
     timestamp,
