@@ -1,3 +1,3 @@
-import type { PropsWithChildren } from 'react';
+import * as React from 'react';
 
-export type TLayoutProps<T = unknown> = PropsWithChildren<T>;
+export type TLayoutProps<T = unknown> = React.PropsWithChildren<T>;
