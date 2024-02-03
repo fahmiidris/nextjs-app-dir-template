@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
-import clsx, { type ClassArray } from 'clsx';
+import { clsx, type ClassArray } from 'clsx';
 
-export default function cn(...classNames: ClassArray) {
+export function cn(...classNames: ClassArray): string {
     return twMerge(clsx(classNames));
 }

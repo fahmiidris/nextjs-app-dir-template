@@ -3,7 +3,9 @@ import '@/styles/main.css';
 
 import * as React from 'react';
 
-import cn from '@/utils/cn';
+import { TRPCReactProvider } from '@/trpc/client/react';
+
+import { cn } from '@/utils/cn';
 
 import type { Metadata } from 'next';
 import type { TLayoutProps } from '@/types/layout.type';
@@ -22,7 +24,9 @@ export const metadata: Metadata = {
 export default async function Layout({ children }: TLayoutProps) {
     return (
         <html lang="en" className={cn(['scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])}>
-            <body className="bg-white font-sans text-slate-500 antialiased">{children}</body>
+            <body className="bg-white font-sans text-slate-500 antialiased">
+                <TRPCReactProvider>{children}</TRPCReactProvider>
+            </body>
         </html>
     );
 }
