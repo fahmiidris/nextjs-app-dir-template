@@ -6,6 +6,6 @@ import * as schema from '@/server/db/schemas';
 
 import { env } from '@/env.mjs';
 
-export const db = drizzle(postgres(env.DATABASE_URL, { prepare: false }), {
+export const db = drizzle(postgres(env.DATABASE_URL), {
     schema,
 });
