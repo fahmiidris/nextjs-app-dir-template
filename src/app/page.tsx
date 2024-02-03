@@ -10,11 +10,15 @@ import { getServerAuthSession } from '@/server/auth';
 export default async function Page() {
     noStore();
 
+    console.time('fetchQuote');
     const ping = await api.quotes.get.query({
         from: 'Albert Einstein',
     });
+    console.timeEnd('fetchQuote');
 
+    console.time('session');
     const session = await getServerAuthSession();
+    console.timeEnd('session');
 
     return (
         <main className="relative">
