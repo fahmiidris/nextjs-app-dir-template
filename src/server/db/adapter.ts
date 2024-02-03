@@ -29,11 +29,21 @@ import {
     index,
 } from 'drizzle-orm/pg-core';
 
-import { stripUndefined } from '@/utils/strip-undefined';
-
 import type { Adapter, AdapterAccount } from 'next-auth/adapters';
 
-export function createTables(pgTable: PgTableFn) {
+type NonNullableProps<T> = {
+    [P in keyof T]: null extends T[P] ? never : P;
+}[keyof T];
+
+function stripUndefined<T>(obj: T): Pick<T, NonNullableProps<T>> {
+    const result = {} as T;
+
+    for (const key in obj) if (obj[key] !== undefined) result[key] = obj[key];
+
+    return result;
+}
+
+function createTables(pgTable: PgTableFn) {
     const users = pgTable(
         'users',
         {
