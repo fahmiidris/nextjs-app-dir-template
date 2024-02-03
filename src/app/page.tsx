@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { unstable_noStore as noStore } from 'next/cache';
-
 import NextLink from 'next/link';
+
+import { unstable_noStore as noStore } from 'next/cache';
 
 import { api } from '@/trpc/server';
 import { getServerAuthSession } from '@/server/auth';
@@ -19,12 +19,12 @@ export default async function Page() {
     return (
         <main className="relative">
             <div className="container relative flex min-h-dvh flex-col items-center justify-center text-center">
-                <p>
+                <p className="font-medium">
                     {`"${ping.quote}"`} - {ping.from}
                 </p>
 
                 {session ? (
-                    <p>
+                    <p className="font-medium">
                         You are logged in as {session.user.name} ({session.user.email})
                     </p>
                 ) : null}
@@ -32,7 +32,7 @@ export default async function Page() {
                 <div className="mt-8">
                     <NextLink
                         href={session ? '/api/auth/signout' : '/api/auth/signin'}
-                        className="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 hover:bg-zinc-50"
+                        className="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50"
                     >
                         {session ? 'Sign out' : 'Sign in'}
                     </NextLink>
