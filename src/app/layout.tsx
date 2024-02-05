@@ -3,7 +3,7 @@ import '@/styles/main.css';
 
 import * as React from 'react';
 
-import { TRPCReactProvider } from '@/trpc/client/react';
+import Providers from '@/app/providers';
 
 import { cn } from '@/utils/cn';
 
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 export default async function Layout({ children }: TLayoutProps) {
     return (
-        <html lang="en" className={cn(['scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])}>
-            <body className="bg-white font-sans text-slate-500 antialiased">
-                <TRPCReactProvider>{children}</TRPCReactProvider>
+        <html lang="en" className={cn(['scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])} suppressHydrationWarning>
+            <body className={cn(['bg-white font-sans text-slate-500 antialiased', 'dark:bg-zinc-700 dark:text-white'])}>
+                <Providers>{children}</Providers>
             </body>
         </html>
     );
