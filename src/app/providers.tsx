@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 
+import { Toaster } from 'sonner';
 import { ThemeProvider } from 'next-themes';
 
 import { ThemeWatcher } from '@/app/_components/theme-watcher';
@@ -16,6 +17,7 @@ export default function Providers({ children }: TProvidersProps) {
                 {children}
 
                 <ThemeWatcher />
+                <Toaster position="top-right" richColors />
             </ThemeProvider>
         </TRPCReactProvider>
     );
