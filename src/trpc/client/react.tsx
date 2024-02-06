@@ -26,6 +26,13 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
                 }),
                 unstable_httpBatchStreamLink({
                     url: getUrl(),
+                    headers: async () => {
+                        const headers = new Headers();
+
+                        headers.set('x-trpc-source', 'nextjs');
+
+                        return headers;
+                    },
                 }),
             ],
         });
