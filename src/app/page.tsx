@@ -11,7 +11,7 @@ import { cn } from '@/utils/cn';
 export default async function Page() {
     noStore();
 
-    const ping = await api.quotes.get.query({
+    const ping = await api.quotes.get({
         from: 'Albert Einstein',
     });
 

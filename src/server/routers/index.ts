@@ -1,4 +1,4 @@
-import { createTRPCRouter } from '@/server/trpc';
+import { createCallerFactory, createTRPCRouter } from '@/server/trpc';
 
 import { quotesRouter } from '@/server/routers/quotes/router';
 
@@ -10,6 +10,13 @@ import { quotesRouter } from '@/server/routers/quotes/router';
 export const appRouter = createTRPCRouter({
     quotes: quotesRouter,
 });
+
+/**
+ * Create a server-side caller for the tRPC API.
+ *
+ * @see https://trpc.io/docs/server/server-side-calls#basic-example
+ */
+export const createCaller = createCallerFactory(appRouter);
 
 /**
  * This is the type of your router.
