@@ -1,7 +1,9 @@
 import colors from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
+import tailwindcssForms from '@tailwindcss/forms';
 import tailwindcssTypography from '@tailwindcss/typography';
+import tailwindcssContainerQueries from '@tailwindcss/container-queries';
 
 import type { Config } from 'tailwindcss';
 
@@ -27,7 +29,7 @@ const tailwindConfig = {
             },
         },
     },
-    plugins: [tailwindcssTypography],
+    plugins: [tailwindcssForms, tailwindcssTypography, tailwindcssContainerQueries],
 } satisfies Config;
 
 export default tailwindConfig;
