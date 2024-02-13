@@ -22,11 +22,11 @@ import {
     text,
     primaryKey,
     integer,
-    PgTableFn,
-    PgDatabase,
     serial,
     varchar,
     index,
+    type PgTableFn,
+    type PgDatabase,
 } from 'drizzle-orm/pg-core';
 
 import type { Adapter, AdapterAccount } from 'next-auth/adapters';
