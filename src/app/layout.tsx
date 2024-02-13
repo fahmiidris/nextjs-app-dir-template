@@ -8,7 +8,8 @@ import Providers from '@/app/providers';
 import { cn } from '@/utils/cn';
 
 import type { Metadata } from 'next';
-import type { TLayoutProps } from '@/types/layout.type';
+
+import type { TLayoutProps } from '@/types/layout';
 
 const DEFAULT_TITLE = 'Next.js App Dir Template';
 const DEFAULT_DESCRIPTION = 'Next.js app directory template, built with Next.js (TypeScript) and Tailwind CSS.';

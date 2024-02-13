@@ -2,6 +2,10 @@ env:
     browser: true
     node: true
 
+globals:
+    React: true
+    JSX: true
+
 plugins:
     - '@typescript-eslint'
 
@@ -15,12 +19,12 @@ parser: '@typescript-eslint/parser'
 
 rules:
     'no-console': 'warn'
+    'no-nested-ternary': 'warn'
+    'no-use-before-define': 'warn'
     '@typescript-eslint/array-type':
         - 'warn'
         - 'default': 'array-simple'
-    '@typescript-eslint/consistent-indexed-object-style': 'warn'
     '@typescript-eslint/no-explicit-any': 'warn'
-
-globals:
-    JSX: true
-    React: true
+    '@typescript-eslint/consistent-type-imports': 'warn'
+    '@typescript-eslint/consistent-type-definitions': 'warn'
+    '@typescript-eslint/consistent-indexed-object-style': 'warn'
