@@ -8,7 +8,7 @@ import { ThemeProvider } from 'next-themes';
 import { ThemeWatcher } from '@/app/_components/theme-watcher';
 import { TRPCReactProvider } from '@/trpc/client/react';
 
-type TProvidersProps = React.PropsWithChildren;
+import type { TProvidersProps } from '@/types/providers';
 
 export default function Providers({ children }: TProvidersProps) {
     return (
