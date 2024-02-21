@@ -9,8 +9,6 @@ import { loggerLink, unstable_httpBatchStreamLink } from '@trpc/client';
 
 import { getUrl, transformer } from '@/trpc/shared';
 
-import { env } from '@/env.mjs';
-
 import type { TAppRouter } from '@/server/routers';
 
 export const api = createTRPCReact<TAppRouter>();
@@ -23,7 +21,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
             transformer,
             links: [
                 loggerLink({
-                    enabled: (op) => env.NODE_ENV === 'development' || (op.direction === 'down' && op.result instanceof Error),
+                    enabled: (op) => process.env.NODE_ENV === 'development' || (op.direction === 'down' && op.result instanceof Error),
                 }),
                 unstable_httpBatchStreamLink({
                     url: getUrl(),
