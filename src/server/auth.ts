@@ -6,7 +6,7 @@ import { db } from '@/server/db';
 import { pgTable } from '@/server/db/table';
 import { PostgreSQLAdapter } from '@/server/db/adapter';
 
-import { env } from '@/env.mjs';
+import { env } from '@/env';
 
 import type { Adapter } from 'next-auth/adapters';
 

@@ -5,7 +5,7 @@ import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 import { appRouter } from '@/server/routers';
 import { createTRPCContext } from '@/server/trpc';
 
-import { env } from '@/env.mjs';
+import { env } from '@/env';
 
 import type { NextRequest } from 'next/server';
 

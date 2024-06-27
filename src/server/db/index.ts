@@ -4,7 +4,7 @@ import { drizzle } from 'drizzle-orm/postgres-js';
 
 import * as schema from '@/server/db/schemas';
 
-import { env } from '@/env.mjs';
+import { env } from '@/env';
 
 export const db = drizzle(postgres(env.DATABASE_URL), {
     schema,

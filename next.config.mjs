@@ -1,4 +1,9 @@
-import './src/env.mjs';
+import nodeURL from 'node:url';
+import jiti from 'jiti';
+
+const tsFile = jiti(nodeURL.fileURLToPath(import.meta.url));
+
+tsFile('./src/env.ts');
 
 import bundleAnalyzer from '@next/bundle-analyzer';
 
