@@ -2,7 +2,7 @@ import { env } from '@/env.mjs';
 
 import { defineConfig } from 'drizzle-kit';
 
-const drizzleConfig = defineConfig({
+const config = defineConfig({
     schema: './src/server/db/schemas/**/schema.ts',
     out: './drizzle',
     driver: 'pg',
@@ -14,4 +14,4 @@ const drizzleConfig = defineConfig({
     strict: true,
 });
 
-export default drizzleConfig;
+export default config;

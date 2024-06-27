@@ -4,7 +4,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 
 import { Link } from '@/components/link';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/utils/classname';
 import { api } from '@/trpc/server';
 import { getServerAuthSession } from '@/server/auth';
 

@@ -1,7 +1,7 @@
 {
     "Import React": {
         "prefix": "ir",
-        "body": ["import * as React from 'react';"]
+        "body": ["import * as React from 'react';"],
     },
     "Next.js Page": {
         "prefix": "np",
@@ -10,14 +10,14 @@
             "",
             "import type { Metadata } from 'next';",
             "",
-            "export const metadata: Metadata = {"
-            "    title: '$2',",
-            "    description: '$3',",
-            "};"
-            "",
             "export default async function ${1:Page}() {",
             "    return <>${1:Page}</>;",
             "}",
+            "",
+            "export const metadata: Metadata = {",
+            "    title: '$2',",
+            "    description: '$3',",
+            "};",
             "",
         ],
     },
@@ -26,17 +26,18 @@
         "body": [
             "import * as React from 'react';",
             "",
-            "import type { Metadata } from 'next';",
-            "import type { TPageProps } from '@/types/page.type';",
+            "import type { TPageProps as TDefaultPageProps } from '@/types/page';",
             "",
-            "export const metadata: Metadata = {"
-            "    title: '$2',",
-            "    description: '$3',",
-            "};"
+            "type TPageProps = TDefaultPageProps<${5:unknown},${6:unknown}>;",
             "",
             "export default async function ${1:Page}({ $4 }: TPageProps) {",
             "    return <>${1:Page}</>;",
             "}",
+            "",
+            "export const metadata: Metadata = {",
+            "    title: '$2',",
+            "    description: '$3',",
+            "};",
             "",
         ],
     },
@@ -45,12 +46,29 @@
         "body": [
             "import * as React from 'react';",
             "",
-            "import type { TLayoutProps } from '@/types/layout.type';",
+            "import type { TLayoutProps } from '@/types/layout';",
             "",
             "export default async function ${1:Layout}({ children }: TLayoutProps) {",
             "    return <>{children}</>;",
             "}",
             "",
-        ]
-    }
+        ],
+    },
+    "Next.js Layout With Props": {
+        "prefix": "nlwp",
+        "body": [
+            "import * as React from 'react';",
+            "",
+            "import type { TLayoutProps as TDefaultLayoutProps } from '@/types/layout';",
+            "",
+            "type TLayoutProps = TDefaultLayoutProps<{",
+            "    $3: ${4:string};",
+            "}>;",
+            "",
+            "export default async function ${1:Layout}({ children, $2 }: TLayoutProps) {",
+            "    return <>{children}</>;",
+            "}",
+            "",
+        ],
+    },
 }

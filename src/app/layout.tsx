@@ -1,20 +1,38 @@
-import '@/styles/fonts.css';
 import '@/styles/main.css';
 
 import * as React from 'react';
 
+import localFont from 'next/font/local';
+
 import Providers from '@/app/providers';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/utils/classname';
 
 import type { Metadata } from 'next';
 
 import type { TLayoutProps } from '@/types/layout';
 
+const fontSans = localFont({
+    src: [
+        {
+            path: '../fonts/Inter-roman-latin.var.woff2',
+            style: 'normal',
+            weight: '100 900',
+        },
+        {
+            path: '../fonts/Inter-italic-latin.var.woff2',
+            style: 'italic',
+            weight: '100 900',
+        },
+    ],
+    display: 'swap',
+    variable: '--font-sans',
+});
+
 export default async function Layout({ children }: TLayoutProps) {
     return (
         <html lang="en" className={cn(['scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])} suppressHydrationWarning>
-            <body className={cn(['bg-white font-sans text-slate-500 antialiased', 'dark:bg-zinc-700 dark:text-white'])}>
+            <body className={cn([fontSans.variable, 'bg-white font-sans text-slate-500 antialiased', 'dark:bg-zinc-700 dark:text-white'])}>
                 <Providers>{children}</Providers>
             </body>
         </html>

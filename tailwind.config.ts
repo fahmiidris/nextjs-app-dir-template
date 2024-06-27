@@ -7,7 +7,7 @@ import tailwindcssContainerQueries from '@tailwindcss/container-queries';
 
 import type { Config } from 'tailwindcss';
 
-const tailwindConfig = {
+const config = {
     content: ['./src/**/*.{ts,tsx}'],
     darkMode: ['selector'],
     theme: {
@@ -22,7 +22,10 @@ const tailwindConfig = {
                 primary: colors.cyan,
             },
             fontFamily: {
-                sans: [['Inter var', ...defaultTheme.fontFamily.sans], { fontFeatureSettings: "'cv02', 'cv03', 'cv04', 'cv09', 'cv10', 'cv11'" }],
+                sans: [
+                    ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+                    { fontFeatureSettings: "'cv02', 'cv03', 'cv04', 'cv09', 'cv10', 'cv11'" },
+                ],
             },
             screens: {
                 '2xl': '1536px',
@@ -32,4 +35,4 @@ const tailwindConfig = {
     plugins: [tailwindcssForms, tailwindcssTypography, tailwindcssContainerQueries],
 } satisfies Config;
 
-export default tailwindConfig;
+export default config;

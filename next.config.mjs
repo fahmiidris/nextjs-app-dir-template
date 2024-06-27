@@ -7,8 +7,8 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
     reactStrictMode: true,
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withBundleAnalyzer(config);

@@ -1,4 +1,4 @@
-const prettierConfig = {
+const config = {
     semi: true,
     useTabs: false,
     singleQuote: true,
@@ -14,4 +14,4 @@ const prettierConfig = {
     plugins: ['prettier-plugin-tailwindcss'],
 };
 
-module.exports = prettierConfig;
+module.exports = config;
