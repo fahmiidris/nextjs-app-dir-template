@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { unstable_noStore as noStore } from 'next/cache';
 
-import { Link } from '@/components/link';
+import Link from '@/components/link';
+import Button from '@/components/ui/button';
 
-import { cn } from '@/utils/classname';
 import { api } from '@/trpc/server';
 import { getServerAuthSession } from '@/server/auth';
 
@@ -30,17 +30,38 @@ export default async function Page() {
                     </p>
                 ) : null}
 
-                <div className="mt-8">
-                    <Link
-                        href={session ? '/api/auth/signout' : '/api/auth/signin'}
-                        className={cn([
-                            'inline-flex items-center rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 duration-200 ease-in-out',
-                            'hover:bg-zinc-50',
-                            'dark:border-zinc-700 dark:bg-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-500',
-                        ])}
-                    >
-                        {session ? 'Sign out' : 'Sign in'}
-                    </Link>
+                <div className="mt-8 flex items-center gap-4">
+                    <Button type="button" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="secondary" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="outline" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="ghost" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="success" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="warning" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="info" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
+
+                    <Button type="button" variant="danger" asChild>
+                        <Link href={session ? '/api/auth/signout' : '/api/auth/signin'}>{session ? 'Sign out' : 'Sign in'}</Link>
+                    </Button>
                 </div>
             </div>
         </main>

@@ -13,7 +13,7 @@ import type { TAppRouter } from '@/server/routers';
 
 export const api = createTRPCReact<TAppRouter>();
 
-export function TRPCReactProvider(props: { children: React.ReactNode }) {
+export default function TRPCReactProvider(props: { children: React.ReactNode }) {
     const [queryClient] = React.useState(() => new QueryClient());
 
     const [trpcClient] = React.useState(() => {

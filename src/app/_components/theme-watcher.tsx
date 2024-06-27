@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { useTheme } from 'next-themes';
 
-export function ThemeWatcher() {
+export default function ThemeWatcher() {
     const { resolvedTheme, setTheme } = useTheme();
 
     React.useEffect(() => {
@@ -25,5 +25,5 @@ export function ThemeWatcher() {
         };
     }, [resolvedTheme, setTheme]);
 
-    return null;
+    return <div />;
 }

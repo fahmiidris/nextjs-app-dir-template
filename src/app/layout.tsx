@@ -31,8 +31,8 @@ const fontSans = localFont({
 
 export default async function Layout({ children }: TLayoutProps) {
     return (
-        <html lang="en" className={cn(['scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])} suppressHydrationWarning>
-            <body className={cn([fontSans.variable, 'bg-white font-sans text-slate-500 antialiased', 'dark:bg-zinc-700 dark:text-white'])}>
+        <html lang="en" className={cn(['h-dvh scroll-smooth [--scroll-mt:9.875rem]', 'lg:[--scroll-mt:6.3125rem]'])} suppressHydrationWarning>
+            <body className={cn([fontSans.variable, 'min-h-dvh bg-background font-sans text-foreground antialiased'])}>
                 <Providers>{children}</Providers>
             </body>
         </html>

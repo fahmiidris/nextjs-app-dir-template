@@ -10,6 +10,9 @@ importers:
             '@next/bundle-analyzer':
                 specifier: ^14.1.0
                 version: 14.1.0
+            '@radix-ui/react-slot':
+                specifier: ^1.1.0
+                version: 1.1.0(@types/react@18.2.48)(react@18.2.0)
             '@t3-oss/env-nextjs':
                 specifier: ^0.10.1
                 version: 0.10.1(typescript@5.3.3)(zod@3.23.8)
@@ -31,6 +34,9 @@ importers:
             '@trpc/server':
                 specifier: 11.0.0-next-beta.248
                 version: 11.0.0-next-beta.248
+            class-variance-authority:
+                specifier: ^0.7.0
+                version: 0.7.0
             clsx:
                 specifier: ^2.1.0
                 version: 2.1.0
@@ -40,6 +46,9 @@ importers:
             jiti:
                 specifier: ^1.21.6
                 version: 1.21.6
+            lucide-react:
+                specifier: ^0.397.0
+                version: 0.397.0(react@18.2.0)
             next:
                 specifier: ^14.1.0
                 version: 14.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -70,6 +79,9 @@ importers:
             tailwind-merge:
                 specifier: ^1.14.0
                 version: 1.14.0
+            tailwindcss-animate:
+                specifier: ^1.0.7
+                version: 1.0.7(tailwindcss@3.4.1(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.3.3)))
             zod:
                 specifier: ^3.23.8
                 version: 3.23.8
@@ -147,8 +159,8 @@ importers:
                 specifier: ^3.2.4
                 version: 3.2.4
             prettier-plugin-tailwindcss:
-                specifier: ^0.5.11
-                version: 0.5.11(prettier@3.2.4)
+                specifier: ^0.6.5
+                version: 0.6.5(prettier@3.2.4)
             tailwindcss:
                 specifier: ^3.4.1
                 version: 3.4.1(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.3.3))
@@ -680,6 +692,24 @@ packages:
     '@polka/url@1.0.0-next.24':
         resolution: { integrity: sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ== }
 
+    '@radix-ui/react-compose-refs@1.1.0':
+        resolution: { integrity: sha512-b4inOtiaOnYf9KWyO3jAeeCG6FeyfY6ldiEPanbUjWd+xIk5wZeHa8yVwmrJ2vderhu/BQvzCrJI0lHd+wIiqw== }
+        peerDependencies:
+            '@types/react': '*'
+            react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+
+    '@radix-ui/react-slot@1.1.0':
+        resolution: { integrity: sha512-FUCf5XMfmW4dtYl69pdS4DbxKy8nj4M7SafBgPllysxmdachynNflAdp/gCsnYWNDnge6tI9onzMp5ARYc1KNw== }
+        peerDependencies:
+            '@types/react': '*'
+            react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+        peerDependenciesMeta:
+            '@types/react':
+                optional: true
+
     '@rushstack/eslint-patch@1.7.0':
         resolution: { integrity: sha512-Jh4t/593gxs0lJZ/z3NnasKlplXT2f+4y/LZYuaKZW5KAaiVFL/fThhs+17EbUd53jUVJ0QudYCBGbN/psvaqg== }
 
@@ -1078,6 +1108,9 @@ packages:
         resolution: { integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw== }
         engines: { node: '>= 8.10.0' }
 
+    class-variance-authority@0.7.0:
+        resolution: { integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A== }
+
     cli-color@2.0.3:
         resolution: { integrity: sha512-OkoZnxyC4ERN3zLzZaY9Emb7f/MhBOIpePv0Ycok0fJYT+Ouo00UBEIwsVsr0yoow++n5YWlSUgST9GKhNHiRQ== }
         engines: { node: '>=0.10' }
@@ -1096,6 +1129,10 @@ packages:
     cliui@8.0.1:
         resolution: { integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ== }
         engines: { node: '>=12' }
+
+    clsx@2.0.0:
+        resolution: { integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q== }
+        engines: { node: '>=6' }
 
     clsx@2.1.0:
         resolution: { integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg== }
@@ -2120,6 +2157,11 @@ packages:
     lru-queue@0.1.0:
         resolution: { integrity: sha512-BpdYkt9EvGl8OfWHDQPISVpcl5xZthb+XPsbELj5AQXxIC8IriDZIQYjBJPEm5rS420sjZ0TLEzRcq5KdBhYrQ== }
 
+    lucide-react@0.397.0:
+        resolution: { integrity: sha512-rUcbRY5jFP/4za/OJvaRUUmdPsPb940Tw9zE1ehrRZmr9JnkDcW8OV3POR3XfEAAMDkssiTc5IWBFv8Y//pkDQ== }
+        peerDependencies:
+            react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
     make-error@1.3.6:
         resolution: { integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw== }
 
@@ -2547,14 +2589,15 @@ packages:
         resolution: { integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w== }
         engines: { node: '>=6.0.0' }
 
-    prettier-plugin-tailwindcss@0.5.11:
-        resolution: { integrity: sha512-AvI/DNyMctyyxGOjyePgi/gqj5hJYClZ1avtQvLlqMT3uDZkRbi4HhGUpok3DRzv9z7Lti85Kdj3s3/1CeNI0w== }
+    prettier-plugin-tailwindcss@0.6.5:
+        resolution: { integrity: sha512-axfeOArc/RiGHjOIy9HytehlC0ZLeMaqY09mm8YCkMzznKiDkwFzOpBvtuhuv3xG5qB73+Mj7OCe2j/L1ryfuQ== }
         engines: { node: '>=14.21.3' }
         peerDependencies:
             '@ianvs/prettier-plugin-sort-imports': '*'
             '@prettier/plugin-pug': '*'
             '@shopify/prettier-plugin-liquid': '*'
             '@trivago/prettier-plugin-sort-imports': '*'
+            '@zackad/prettier-plugin-twig-melody': '*'
             prettier: ^3.0
             prettier-plugin-astro: '*'
             prettier-plugin-css-order: '*'
@@ -2563,9 +2606,9 @@ packages:
             prettier-plugin-marko: '*'
             prettier-plugin-organize-attributes: '*'
             prettier-plugin-organize-imports: '*'
+            prettier-plugin-sort-imports: '*'
             prettier-plugin-style-order: '*'
             prettier-plugin-svelte: '*'
-            prettier-plugin-twig-melody: '*'
         peerDependenciesMeta:
             '@ianvs/prettier-plugin-sort-imports':
                 optional: true
@@ -2574,6 +2617,8 @@ packages:
             '@shopify/prettier-plugin-liquid':
                 optional: true
             '@trivago/prettier-plugin-sort-imports':
+                optional: true
+            '@zackad/prettier-plugin-twig-melody':
                 optional: true
             prettier-plugin-astro:
                 optional: true
@@ -2589,11 +2634,11 @@ packages:
                 optional: true
             prettier-plugin-organize-imports:
                 optional: true
+            prettier-plugin-sort-imports:
+                optional: true
             prettier-plugin-style-order:
                 optional: true
             prettier-plugin-svelte:
-                optional: true
-            prettier-plugin-twig-melody:
                 optional: true
 
     prettier@3.2.4:
@@ -2920,6 +2965,11 @@ packages:
 
     tailwind-merge@1.14.0:
         resolution: { integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ== }
+
+    tailwindcss-animate@1.0.7:
+        resolution: { integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA== }
+        peerDependencies:
+            tailwindcss: '>=3.0.0 || insiders'
 
     tailwindcss@3.4.1:
         resolution: { integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA== }
@@ -3588,6 +3638,19 @@ snapshots:
 
     '@polka/url@1.0.0-next.24': {}
 
+    '@radix-ui/react-compose-refs@1.1.0(@types/react@18.2.48)(react@18.2.0)':
+        dependencies:
+            react: 18.2.0
+        optionalDependencies:
+            '@types/react': 18.2.48
+
+    '@radix-ui/react-slot@1.1.0(@types/react@18.2.48)(react@18.2.0)':
+        dependencies:
+            '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.2.48)(react@18.2.0)
+            react: 18.2.0
+        optionalDependencies:
+            '@types/react': 18.2.48
+
     '@rushstack/eslint-patch@1.7.0': {}
 
     '@swc/helpers@0.5.2':
@@ -4014,6 +4077,10 @@ snapshots:
         optionalDependencies:
             fsevents: 2.3.3
 
+    class-variance-authority@0.7.0:
+        dependencies:
+            clsx: 2.0.0
+
     cli-color@2.0.3:
         dependencies:
             d: 1.0.1
@@ -4038,6 +4105,8 @@ snapshots:
             string-width: 4.2.3
             strip-ansi: 6.0.1
             wrap-ansi: 7.0.0
+
+    clsx@2.0.0: {}
 
     clsx@2.1.0: {}
 
@@ -5170,6 +5239,10 @@ snapshots:
         dependencies:
             es5-ext: 0.10.62
 
+    lucide-react@0.397.0(react@18.2.0):
+        dependencies:
+            react: 18.2.0
+
     make-error@1.3.6: {}
 
     map-obj@1.0.1: {}
@@ -5591,7 +5664,7 @@ snapshots:
         dependencies:
             fast-diff: 1.3.0
 
-    prettier-plugin-tailwindcss@0.5.11(prettier@3.2.4):
+    prettier-plugin-tailwindcss@0.6.5(prettier@3.2.4):
         dependencies:
             prettier: 3.2.4
 
@@ -5928,6 +6001,10 @@ snapshots:
             tslib: 2.6.2
 
     tailwind-merge@1.14.0: {}
+
+    tailwindcss-animate@1.0.7(tailwindcss@3.4.1(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.3.3))):
+        dependencies:
+            tailwindcss: 3.4.1(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.3.3))
 
     tailwindcss@3.4.1(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.3.3)):
         dependencies:
