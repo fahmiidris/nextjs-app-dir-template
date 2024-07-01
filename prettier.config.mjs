@@ -1,3 +1,7 @@
+/** @typedef {import("prettier").Config} PrettierConfig */
+/** @typedef {import("prettier-plugin-tailwindcss").PluginOptions} TailwindConfig */
+
+/** @type { PrettierConfig | TailwindConfig } */
 const config = {
     semi: true,
     useTabs: false,
@@ -14,4 +18,4 @@ const config = {
     plugins: ['prettier-plugin-tailwindcss'],
 };
 
-module.exports = config;
+export default config;

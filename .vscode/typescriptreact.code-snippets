@@ -26,9 +26,11 @@
         "body": [
             "import * as React from 'react';",
             "",
+            "import type { Metadata } from 'next';",
+            "",
             "import type { TPageProps as TDefaultPageProps } from '@/types/page';",
             "",
-            "type TPageProps = TDefaultPageProps<${5:unknown},${6:unknown}>;",
+            "type TPageProps = TDefaultPageProps<${5:unknown}, ${6:unknown}>;",
             "",
             "export default async function ${1:Page}({ $4 }: TPageProps) {",
             "    return <>${1:Page}</>;",
